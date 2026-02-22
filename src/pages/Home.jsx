@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 
+import { Button } from '@/components/Button'
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
@@ -113,6 +114,62 @@ function CaseStudies({ caseStudies }) {
   )
 }
 
+function Pricing() {
+  const deliverables = [
+    'Website audit',
+    'Programmatic SEO',
+    'Content strategy & writing',
+    'Backlink outreach',
+    'Google Search Console & Analytics',
+  ]
+
+  return (
+    <Container className="mt-24 sm:mt-32 lg:mt-40">
+      <FadeIn>
+        <div className="-mx-6 rounded-4xl bg-neutral-950 px-6 py-20 sm:mx-0 sm:py-32 md:px-12">
+          <div className="mx-auto max-w-4xl">
+            <div className="flex flex-col gap-y-10 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <p className="font-display text-sm font-semibold tracking-wider text-neutral-400 uppercase">
+                  Pricing
+                </p>
+                <p className="mt-4 font-display text-5xl font-semibold text-white sm:text-6xl">
+                  £1,750
+                  <span className="text-2xl font-normal text-neutral-400">
+                    /month
+                  </span>
+                </p>
+                <p className="mt-4 text-base text-neutral-400">
+                  One flat fee. No setup costs. Cancel anytime.
+                </p>
+                <div className="mt-8">
+                  <Button href="https://cal.com/robin-laires" invert>
+                    Book a call
+                  </Button>
+                </div>
+              </div>
+              <ul className="space-y-4 sm:pl-16">
+                {deliverables.map((item) => (
+                  <li key={item} className="flex items-center gap-x-3 text-base text-white">
+                    <svg
+                      viewBox="0 0 16 16"
+                      aria-hidden="true"
+                      className="h-4 w-4 flex-none fill-neutral-400"
+                    >
+                      <path d="M6.5 11.5 3 8l1-1 2.5 2.5 5-5 1 1z" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </FadeIn>
+    </Container>
+  )
+}
+
 function Services() {
   return (
     <>
@@ -192,6 +249,8 @@ export default function Home() {
       </Testimonial>
 
       <Services />
+
+      <Pricing />
 
       <ContactSection />
     </>
