@@ -10,8 +10,12 @@ export function ContactSection() {
         <div className="mx-auto max-w-4xl">
           <div className="max-w-xl">
             <h2 className="font-display text-3xl font-medium text-balance text-white sm:text-4xl">
-              Ready to grow on autopilot?
+              Not sure where to start? That's exactly where we come in.
             </h2>
+            <p className="mt-6 text-base text-neutral-400">
+              Tell us what's taking up your time and where you're losing ground
+              to competitors. We'll tell you what to build — and then build it.
+            </p>
             <div className="mt-6 flex gap-x-6">
               <Button href="https://cal.com/robin-laires" invert>
                 Book a call

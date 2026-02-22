@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 
 import { Button } from '@/components/Button'
-import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { List, ListItem } from '@/components/List'
@@ -18,6 +17,7 @@ import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
 import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
 import logoUnseal from '@/images/clients/unseal/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
+import imageRobin from '@/images/robin.jpg'
 import { loadCaseStudies } from '@/lib/mdx'
 
 const clients = [
@@ -37,7 +37,7 @@ function Clients() {
       <Container>
         <FadeIn className="flex items-center gap-x-8">
           <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
-            Driving growth across every sector
+            UK businesses already moving first
           </h2>
           <div className="h-px flex-auto bg-neutral-800" />
         </FadeIn>
@@ -68,8 +68,8 @@ function CaseStudies({ caseStudies }) {
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          We've helped UK small businesses compound their organic reach month
-          after month — without hiring a single extra person.
+          Most businesses know they need AI. Very few have it working. Here's
+          what happens when it does.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -114,11 +114,10 @@ function CaseStudies({ caseStudies }) {
   )
 }
 
-function Pricing() {
+function PricingAndContact() {
   const deliverables = [
     'Website audit',
     'Competitor research',
-    'Programmatic SEO',
     'Content strategy & writing',
     'Backlink outreach',
     'Google Search Console & Analytics',
@@ -130,25 +129,29 @@ function Pricing() {
         <div className="-mx-6 rounded-4xl bg-neutral-950 px-6 py-20 sm:mx-0 sm:py-32 md:px-12">
           <div className="mx-auto max-w-4xl">
             <div className="flex flex-col gap-y-10 sm:flex-row sm:items-start sm:justify-between">
-              <div>
+              {/* Left: CTA + pricing */}
+              <div className="max-w-sm">
                 <p className="font-display text-sm font-semibold tracking-wider text-neutral-400 uppercase">
-                  Pricing
+                  Ready to stop losing ground?
                 </p>
                 <p className="mt-4 font-display text-5xl font-semibold text-white sm:text-6xl">
                   £1,750
-                  <span className="text-2xl font-normal text-neutral-400">
-                    /month
-                  </span>
+                  <span className="text-2xl font-normal text-neutral-400">/month</span>
                 </p>
-                <p className="mt-4 text-base text-neutral-400">
+                <p className="mt-3 text-sm text-neutral-400">
                   One flat fee. No setup costs. Cancel anytime.
                 </p>
-                <div className="mt-8">
+                <div className="mt-8 flex gap-x-6">
                   <Button href="https://cal.com/robin-laires" invert>
                     Book a call
                   </Button>
+                  <Button href="/contact" invert>
+                    Get in touch
+                  </Button>
                 </div>
               </div>
+
+              {/* Right: deliverables */}
               <ul className="space-y-4 sm:pl-16">
                 {deliverables.map((item) => (
                   <li key={item} className="flex items-center gap-x-3 text-base text-white">
@@ -164,6 +167,20 @@ function Pricing() {
                 ))}
               </ul>
             </div>
+
+            {/* Office */}
+            <div className="mt-16 border-t border-white/10 pt-10">
+              <p className="font-display text-sm font-semibold tracking-wider text-white uppercase">
+                Office
+              </p>
+              <address className="mt-3 text-sm not-italic text-neutral-400">
+                London
+                <br />
+                27 Old Gloucester Street
+                <br />
+                WC1N 3AX
+              </address>
+            </div>
           </div>
         </div>
       </FadeIn>
@@ -173,13 +190,13 @@ function Pricing() {
 
 const competitors = [
   {
-    name: 'Hire in-house',
-    cost: '£4,000+/mo',
+    name: 'DIY tools',
+    cost: 'Your time',
     points: [
-      'One person covering everything',
-      'Months to hire and onboard',
-      'Knowledge walks out when they do',
-      'No AI infrastructure',
+      'Stitched-together tools, no system',
+      '42% of UK AI projects are abandoned',
+      'You do the work, nothing ships consistently',
+      'No compounding — just scattered effort',
     ],
     highlight: false,
   },
@@ -198,7 +215,7 @@ const competitors = [
     name: 'Agent Studyo',
     cost: '£1,750/mo',
     points: [
-      'AI pipeline built for your business',
+      'Custom AI pipeline built for your business',
       'Running in weeks, not months',
       'Your content, your rankings, your channel',
       'Founded and operated by a developer',
@@ -211,20 +228,20 @@ function Competitors() {
   return (
     <>
       <SectionIntro
-        title="Most agencies sell you the same thing."
+        title="Most businesses tried AI. Most gave up."
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          Junior writers. Recycled templates. Monthly reports that don't move
-          the needle. There's a better option.
+          42% of UK businesses abandoned their AI projects in 2025. Too many
+          tools, no clear path, nothing shipped. There is a better option.
         </p>
       </SectionIntro>
       <Container className="mt-16">
         <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {competitors.map((col) => (
-            <FadeIn key={col.name}>
+            <FadeIn key={col.name} className="h-full">
               <div
-                className={`rounded-3xl p-8 ring-1 ${
+                className={`h-full rounded-3xl p-8 ring-1 ${
                   col.highlight
                     ? 'bg-neutral-950 ring-neutral-950'
                     : 'bg-white ring-neutral-950/5'
@@ -283,8 +300,9 @@ function Services() {
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          Built on Nest Content — an AI pipeline for competitive research,
-          content strategy, writing and SEO. Operated for you, end to end.
+          A custom AI pipeline that researches your competitors, finds your
+          best keywords, writes and publishes content, and builds links —
+          deployed in weeks and running 24/7. You don't touch a thing.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -309,11 +327,7 @@ function Services() {
               comes from, and what's working for them — so we can beat them at
               it.
             </ListItem>
-            <ListItem title="Programmatic SEO">
-              AI-generated pages targeting the specific searches your customers
-              make. Built at scale, ranked on Google.
-            </ListItem>
-            <ListItem title="Content strategy & writing">
+<ListItem title="Content strategy & writing">
               A rolling programme of articles written to rank and convert —
               researched, written and published directly to your site.
             </ListItem>
@@ -332,6 +346,43 @@ function Services() {
   )
 }
 
+function Founder() {
+  return (
+    <Container className="mt-24 sm:mt-32 lg:mt-40">
+      <FadeIn>
+        <div className="lg:flex lg:items-center lg:gap-x-16">
+          <div className="shrink-0">
+            <img
+              src={imageRobin}
+              alt="Robin da Silva"
+              className="aspect-square w-32 rounded-2xl object-cover grayscale lg:w-48"
+            />
+          </div>
+          <div className="mt-12 lg:mt-0 lg:w-2/3">
+            <p className="font-display text-sm font-semibold tracking-wider text-neutral-400 uppercase">
+              About
+            </p>
+            <h2 className="mt-4 font-display text-3xl font-medium tracking-tight text-neutral-950 sm:text-4xl">
+              Robin da Silva
+            </h2>
+            <p className="mt-6 text-base text-neutral-600">
+              MSc Engineering from UCL. Lead Software Engineer at Jellyfish, a
+              $1B+ digital marketing group. Now Founder at Nest Content — an AI
+              content and SEO platform used by 150+ businesses, with over 1,000
+              articles generated and 2,400+ keywords tracked.
+            </p>
+            <p className="mt-4 text-base text-neutral-600">
+              I've seen exactly how the best-performing organic channels are
+              built. Agent Studyo brings that same infrastructure to UK small
+              businesses — without the agency markup or the in-house hire.
+            </p>
+          </div>
+        </div>
+      </FadeIn>
+    </Container>
+  )
+}
+
 export default function Home() {
   let caseStudies = loadCaseStudies().slice(0, 3)
 
@@ -343,7 +394,8 @@ export default function Home() {
             Don't get left behind by AI.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            AI systems that run your organic channel.
+            We build and run the AI systems that grow your organic channel —
+            you just show up to the results.
           </p>
         </FadeIn>
       </Container>
@@ -365,9 +417,9 @@ export default function Home() {
 
       <Services />
 
-      <Pricing />
+      <Founder />
 
-      <ContactSection />
+      <PricingAndContact />
     </>
   )
 }
