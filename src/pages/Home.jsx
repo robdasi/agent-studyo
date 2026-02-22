@@ -343,8 +343,9 @@ export default function Home() {
             AI-powered growth. Fully managed.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            Hire (£4,000+/mo) or agency (juniors, templates, no ownership).
-            We're the third option.
+            We run your organic channel end to end — competitor research, SEO,
+            content and backlinks — so it compounds every month without you
+            lifting a finger.
           </p>
         </FadeIn>
       </Container>
