@@ -52,7 +52,7 @@ export function Logo({
       <Logomark className="h-8 flex-none" invert={invert} filled={filled} />
       <span
         className={clsx(
-          'font-display text-sm font-semibold tracking-tight',
+          'font-display text-lg font-semibold tracking-tight',
           invert ? 'text-white' : 'text-neutral-950',
         )}
       >
