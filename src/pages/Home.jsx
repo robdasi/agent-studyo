@@ -343,8 +343,7 @@ export default function Home() {
             AI-powered growth. Fully managed.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            We run your organic channel — competitor research, SEO, content and
-            backlinks. Every month, compounding.
+            AI systems that run your organic channel.
           </p>
         </FadeIn>
       </Container>
