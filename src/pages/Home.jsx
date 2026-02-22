@@ -314,8 +314,8 @@ function Services() {
               make. Built at scale, ranked on Google.
             </ListItem>
             <ListItem title="Content strategy & writing">
-              A rolling programme of articles, guides and landing pages written
-              to rank and convert — published directly to your site.
+              A rolling programme of articles written to rank and convert —
+              researched, written and published directly to your site.
             </ListItem>
             <ListItem title="Backlink outreach">
               We build links from relevant sites in your industry to increase
