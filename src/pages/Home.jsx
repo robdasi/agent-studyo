@@ -117,6 +117,7 @@ function CaseStudies({ caseStudies }) {
 function Pricing() {
   const deliverables = [
     'Website audit',
+    'Competitor research',
     'Programmatic SEO',
     'Content strategy & writing',
     'Backlink outreach',
@@ -302,6 +303,11 @@ function Services() {
               We start by finding exactly what's holding your site back —
               technical issues, missing keywords, thin content, and gaps
               competitors are already exploiting.
+            </ListItem>
+            <ListItem title="Competitor research">
+              We map exactly what your competitors rank for, where their traffic
+              comes from, and what's working for them — so we can beat them at
+              it.
             </ListItem>
             <ListItem title="Programmatic SEO">
               AI-generated pages targeting the specific searches your customers
