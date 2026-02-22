@@ -170,17 +170,120 @@ function Pricing() {
   )
 }
 
+const competitors = [
+  {
+    name: 'Hire in-house',
+    cost: '£4,000+/mo',
+    points: [
+      'One person covering everything',
+      'Months to hire and onboard',
+      'Knowledge walks out when they do',
+      'No AI infrastructure',
+    ],
+    highlight: false,
+  },
+  {
+    name: 'Agency',
+    cost: '£2,000–5,000/mo',
+    points: [
+      'Juniors doing the work',
+      'Templates, not strategy',
+      'Their tools, their process',
+      'You own nothing when you leave',
+    ],
+    highlight: false,
+  },
+  {
+    name: 'Agent Studyo',
+    cost: '£1,750/mo',
+    points: [
+      'AI pipeline built for your business',
+      'Running in weeks, not months',
+      'Your content, your rankings, your channel',
+      'Founded and operated by a developer',
+    ],
+    highlight: true,
+  },
+]
+
+function Competitors() {
+  return (
+    <>
+      <SectionIntro
+        title="Most agencies sell you the same thing."
+        className="mt-24 sm:mt-32 lg:mt-40"
+      >
+        <p>
+          Junior writers. Recycled templates. Monthly reports that don't move
+          the needle. There's a better option.
+        </p>
+      </SectionIntro>
+      <Container className="mt-16">
+        <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {competitors.map((col) => (
+            <FadeIn key={col.name}>
+              <div
+                className={`rounded-3xl p-8 ring-1 ${
+                  col.highlight
+                    ? 'bg-neutral-950 ring-neutral-950'
+                    : 'bg-white ring-neutral-950/5'
+                }`}
+              >
+                <p
+                  className={`font-display text-sm font-semibold tracking-wider uppercase ${
+                    col.highlight ? 'text-neutral-400' : 'text-neutral-400'
+                  }`}
+                >
+                  {col.name}
+                </p>
+                <p
+                  className={`mt-3 font-display text-3xl font-semibold ${
+                    col.highlight ? 'text-white' : 'text-neutral-950'
+                  }`}
+                >
+                  {col.cost}
+                </p>
+                <ul className="mt-8 space-y-3">
+                  {col.points.map((point) => (
+                    <li
+                      key={point}
+                      className={`flex items-start gap-x-3 text-sm ${
+                        col.highlight ? 'text-neutral-300' : 'text-neutral-600'
+                      }`}
+                    >
+                      <svg
+                        viewBox="0 0 16 16"
+                        aria-hidden="true"
+                        className={`mt-0.5 h-4 w-4 flex-none ${
+                          col.highlight ? 'fill-neutral-400' : 'fill-neutral-300'
+                        }`}
+                      >
+                        <path d="M6.5 11.5 3 8l1-1 2.5 2.5 5-5 1 1z" />
+                      </svg>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
+          ))}
+        </FadeInStagger>
+      </Container>
+    </>
+  )
+}
+
 function Services() {
   return (
     <>
       <SectionIntro
-        eyebrow="Services"
-        title="Everything you need to grow — running 24/7."
+        eyebrow="What's included"
+        title="Everything to get your organic channel running."
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          We deploy the AI systems. We manage the pipelines. You focus on your
-          business while the growth compounds.
+          Built on Nest Content — an AI pipeline for competitive research,
+          content strategy, writing and SEO. Operated for you, end to end.
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -195,21 +298,26 @@ function Services() {
             </FadeIn>
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-132 lg:pl-4">
-            <ListItem title="AI SEO Systems">
-              We deploy custom AI agents that research keywords, analyse
-              competitors, and generate content that ranks — entirely hands-free.
+            <ListItem title="Website audit">
+              We start by finding exactly what's holding your site back —
+              technical issues, missing keywords, thin content, and gaps
+              competitors are already exploiting.
             </ListItem>
-            <ListItem title="Content Automation">
-              From blog posts to social captions, we automate your content
-              pipeline so you publish consistently without lifting a finger.
+            <ListItem title="Programmatic SEO">
+              AI-generated pages targeting the specific searches your customers
+              make. Built at scale, ranked on Google.
             </ListItem>
-            <ListItem title="Social Growth">
-              AI-powered scheduling, engagement, and growth strategies that
-              build your audience while you focus on running your business.
+            <ListItem title="Content strategy & writing">
+              A rolling programme of articles, guides and landing pages written
+              to rank and convert — published directly to your site.
             </ListItem>
-            <ListItem title="Analytics & Reporting">
-              Monthly performance reports showing exactly what's working —
-              rankings gained, traffic growth, and leads generated.
+            <ListItem title="Backlink outreach">
+              We build links from relevant sites in your industry to increase
+              your domain authority and accelerate rankings.
+            </ListItem>
+            <ListItem title="Google Search Console & Analytics">
+              Full visibility on what's ranking, what's driving traffic, and
+              what's converting. Monthly reporting, no jargon.
             </ListItem>
           </List>
         </div>
@@ -229,8 +337,10 @@ export default function Home() {
             AI-powered growth. Fully managed.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            We build and run the AI systems that rank your business, grow your
-            audience, and fill your pipeline — you just show up to the results.
+            Most businesses have two options: hire someone (£4,000+/mo all-in)
+            or use an agency (juniors, templates, no real ownership). We're the
+            third — an AI pipeline that runs your organic channel, operated for
+            you, at a fraction of the cost.
           </p>
         </FadeIn>
       </Container>
@@ -247,6 +357,8 @@ export default function Home() {
         chasing for years. The leads started coming in on their own — I didn't
         have to do a thing.
       </Testimonial>
+
+      <Competitors />
 
       <Services />
 
