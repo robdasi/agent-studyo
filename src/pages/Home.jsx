@@ -343,10 +343,8 @@ export default function Home() {
             AI-powered growth. Fully managed.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            Most businesses have two options: hire someone (£4,000+/mo all-in)
-            or use an agency (juniors, templates, no real ownership). We're the
-            third — an AI pipeline that runs your organic channel, operated for
-            you, at a fraction of the cost.
+            Hire (£4,000+/mo) or agency (juniors, templates, no ownership).
+            We're the third option.
           </p>
         </FadeIn>
       </Container>
