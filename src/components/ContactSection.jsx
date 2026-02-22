@@ -12,7 +12,10 @@ export function ContactSection() {
             <h2 className="font-display text-3xl font-medium text-balance text-white sm:text-4xl">
               Ready to grow on autopilot?
             </h2>
-            <div className="mt-6 flex">
+            <div className="mt-6 flex gap-x-6">
+              <Button href="https://cal.com/robin-laires" invert>
+                Book a call
+              </Button>
               <Button href="/contact" invert>
                 Get in touch
               </Button>
