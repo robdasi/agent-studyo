@@ -340,7 +340,7 @@ export default function Home() {
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-balance text-neutral-950 sm:text-7xl">
-            Don't get left behind AI.
+            Don't get left behind by AI.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
             AI systems that run your organic channel.
